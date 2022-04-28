@@ -8,7 +8,9 @@ def main():
     print("Average is : ")
     print(average)
     print("The minimum and maximum is : ")
-    calc_min_max_temperature(num_list)
+    print(calc_min_max_temperature(num_list))
+    print("The median is : ")
+    print(calc_median_temperature(num_list))
 
 
 def display_main_menu():
@@ -26,10 +28,18 @@ def calc_average_temperature(list_calc):
 
 
 def calc_min_max_temperature(num_list):
-    print("maximum is : ")
-    print(max(num_list))
-    print("Minimum is : ")
-    print(min(num_list))
+    mini = min(num_list)
+    maxi = max(num_list)
+    return [mini, maxi]
+
+
+def calc_median_temperature(lst):
+    slst = sorted(lst)
+    if (len(slst)) % 2 == 0:
+        return int((slst[len(slst) / 2] + slstint[(len(slst) - 1) / 2]) / 2)
+    else:
+        # If length is odd then get middle value
+        return slst[int(len(slst) / 2)]
 
 
 if __name__ == "__main__":
